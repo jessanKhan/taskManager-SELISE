@@ -32,4 +32,78 @@
     margin-top: 10px;
   }
   
+/* TaskList.css */
+
+/* .task-list {
+    list-style-type: none;
+    padding: 0;
+  }
   
+  .task-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  } */
+  /* .task-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+  } */
+  ul.task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul.task-list li.task-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  .task-title {
+    font-weight: bold;
+  }
+  
+  .task-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .task-priority {
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+  
+  .priority-low {
+    background-color: #61bd4f;
+    color: #fff;
+  }
+  
+  .priority-medium {
+    background-color: #f2d600;
+    color: #000;
+  }
+  
+  .priority-high {
+    background-color: #eb5a46;
+    color: #fff;
+  }
+  
+  .task-end-date {
+    font-style: italic;
+    margin-left: 10px;
+  }
+    

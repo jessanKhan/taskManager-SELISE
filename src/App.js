@@ -41,7 +41,25 @@ const App = () => {
     // Update localStorage with the updated task list
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   };
+  const onDragEnd = (result) => {
+    if (!result.destination) {
+      return; // Item was not dropped into a valid drop target
+    }
   
+    const sourceStatus = result.source.droppableId;
+    const destinationStatus = result.destination.droppableId;
+    const taskId = result.draggableId;
+  
+    // Update the task's status based on source and destination
+    // You can implement your logic to update the task status here
+  
+    // Example: Move the task from sourceStatus to destinationStatus
+    const updatedTask = tasks.find((task) => task.id.toString() === taskId);
+    updatedTask.status = destinationStatus;
+  
+    // Call the updateTask function passed from the parent component to update the task in the state
+    updateTask(updatedTask);
+  };
 
   return (
     <div className="container mt-4">
@@ -67,6 +85,7 @@ const App = () => {
             status="To-do"
             deleteTask={deleteTask}
             updateTask={updateTask}
+            onDragEnd={onDragEnd} 
           />
         </div>
         <div className="col">
@@ -75,6 +94,7 @@ const App = () => {
             status="In Progress"
             deleteTask={deleteTask}
             updateTask={updateTask}
+            onDragEnd={onDragEnd} 
           />
         </div>
         <div className="col">
@@ -84,6 +104,7 @@ const App = () => {
             status="Done"
             deleteTask={deleteTask}
             updateTask={updateTask}
+            onDragEnd={onDragEnd} 
           />
         </div>
       </div>
