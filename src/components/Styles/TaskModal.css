@@ -1,4 +1,4 @@
-/* TaskModal Styles */
+/* TaskModal Styles
 .task-modal {
     background-color: #fff;
     padding: 20px;
@@ -54,4 +54,22 @@
   .button:hover {
     background-color: #0056b3;
   }
+   */
+  /* TaskModal.css */
+
+/* Modal overlay */
+.task-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the overlay is above other content */
+  }
+  
+ 
   

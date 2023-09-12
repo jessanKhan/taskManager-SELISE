@@ -45,6 +45,7 @@ const CreateTaskModal = ({ createTask, handleClose }) => {
   };
 
   return (
+    <div className='creat-task-modal-overlay'>
     <div className="create-task-modal">
       <h3>Create New Task</h3>
       <div className="form-group">
@@ -197,6 +198,7 @@ const CreateTaskModal = ({ createTask, handleClose }) => {
         <button className="btn btn-primary" onClick={handleSubmit}>Create</button>
         <button className="btn btn-secondary" onClick={handleClose}>Close</button>
       </div>
+    </div>
     </div>
   );
 };

@@ -16,6 +16,17 @@ const TaskList = ({ tasks, status, updateTask, deleteTask }) => {
     setShowModal(false);
   };
 
+  const handleDeleteClick = (taskId) => {
+    // Call the deleteTask function passed from the parent component
+    deleteTask(taskId);
+  };
+
+  const handleUpdateTask = (updatedTask) => {
+    // Call the updateTask function passed from the parent component
+    updateTask(updatedTask);
+    handleCloseModal();
+  };
+
   return (
     <div>
       <h2>{status} Tasks</h2>
@@ -23,7 +34,7 @@ const TaskList = ({ tasks, status, updateTask, deleteTask }) => {
         {tasks.map((task) => (
           <li key={task.id}>
             <div onClick={() => handleTaskClick(task)}>{task.title}</div>
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
+            <button onClick={() => handleDeleteClick(task.id)}>Delete</button>
           </li>
         ))}
       </ul>
@@ -31,7 +42,7 @@ const TaskList = ({ tasks, status, updateTask, deleteTask }) => {
         <TaskModal
           task={selectedTask}
           handleClose={handleCloseModal}
-          updateTask={updateTask}
+          updateTask={handleUpdateTask}
         />
       )}
     </div>
