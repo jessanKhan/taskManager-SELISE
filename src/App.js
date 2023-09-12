@@ -46,7 +46,7 @@ const App = () => {
       return; // Item was not dropped into a valid drop target
     }
   
-    const sourceStatus = result.source.droppableId;
+    // const sourceStatus = result.source.droppableId;
     const destinationStatus = result.destination.droppableId;
     const taskId = result.draggableId;
   
