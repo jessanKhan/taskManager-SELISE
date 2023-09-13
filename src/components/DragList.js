@@ -1,5 +1,5 @@
 // DragList.js
-import React, { useEffect } from "react";
+import React, { useEffect, useState ,useMemo} from "react";
 import styled from "styled-components";
 import { DragDropContext } from "react-beautiful-dnd";
 import DraggableElement from "./DraggableElement";
@@ -17,7 +17,17 @@ const ListGrid = styled.div`
   grid-gap: 8px;
 `;
 
-function DragList({ deleteTask, updateTask, tasks, openTaskModal }) {
+function DragList({ deleteTask, updateTask, openTaskModal }) {
+    const [tasks,setTasks]= useState([]);
+    const storedTasks = useMemo(() => {
+        return JSON.parse(localStorage.getItem('tasks')) || [];
+      }, []); // Empty dependency array
+    
+      useEffect(() => {
+        setTasks(storedTasks);
+      }, [storedTasks]); // Now, you include storedTasks as a dependency for this useEffect
+    
+
   const removeFromList = (list, index) => {
     const result = Array.from(list);
     const [removed] = result.splice(index, 1);

@@ -72,6 +72,20 @@ const ListItem = ({ item, index, openTaskModal, deleteTask, updateTask }) => {
     setIsModalOpen(false);
   };
 
+  function getDataById(id) {
+    // Get the data from localStorage
+    const storedData = JSON.parse(localStorage.getItem('tasks')) || [];
+  
+    // Find the item with the matching ID
+    const matchingItem = storedData.find(item => item.id === id);
+  
+    return matchingItem;
+  }
+  
+  const itemId = item.id; 
+  const data = getDataById(itemId);
+  
+
   return (
     <>
       <Draggable draggableId={item.id.toString()} index={index}>
@@ -101,7 +115,7 @@ const ListItem = ({ item, index, openTaskModal, deleteTask, updateTask }) => {
 
       {isModalOpen && (
         <TaskModal
-          task={item}
+          task={data}
           handleClose={closeModal}
           updateTask={updateTask}
           deleteTask={deleteTask}

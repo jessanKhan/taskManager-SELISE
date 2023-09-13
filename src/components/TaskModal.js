@@ -6,10 +6,12 @@ import { toast } from 'react-toastify';
 
 
 const TaskModal = ({ task, handleClose, updateTask, deleteTask }) => {
+    console.log("task: " , task)
   const [updatedTask, setUpdatedTask] = useState({
     ...task,
     startDate: task.startDate || null,
     endDate: task.endDate || null,
+    // status: task.status ||'',
   });
 //   const notify = () => toast("Wow so easy!");
   const handleInputChange = (e) => {
@@ -173,9 +175,9 @@ const TaskModal = ({ task, handleClose, updateTask, deleteTask }) => {
             onChange={handleInputChange}
             className='form-control'
           >
-            <option value='To-do'>To-do</option>
-            <option value='In progress'>In progress</option>
-            <option value='Done'>Done</option>
+            <option value='todo'>To-do</option>
+            <option value='inProgress'>In progress</option>
+            <option value='done'>Done</option>
           </select>
         </div>
 
