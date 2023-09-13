@@ -16,6 +16,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure the overlay is above other content */
+    z-index: 1000; 
   }
   
+  .required label::before {
+    content: "*";
+    color: red;
+    margin-right: 4px;
+  }
